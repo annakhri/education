@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JS Education</title>
+
+        <script>
+            // Create an object
+            var obj = {
+                a: 1200,
+                b: 500,
+                c: 300
+                // width: 300 - after function addKey
+            }
+
+            //Function for adding value to object
+
+            function addKey(key, value) {
+                obj[key]=value;
+            }
+
+            addKey('width', 300);
+
+            //Function for calculating sum of object keys
+
+            function sum() {
+                var sum = 0;
+
+                for (var key in obj) {
+                    if (typeof(obj[key]) === 'number') {
+                        sum += obj[key];
+                    }
+                }
+                return sum;
+            }
+
+            alert(sum());
+        </script>
+
+    </head>
+
+    <body>
+    </body>
+</html>
+
