@@ -6,8 +6,6 @@ var Car = function(num_of_wheels, speed) {
 
 	this.num_of_wheels = num_of_wheels || "";
 	this.speed = speed || "";
-
-	return(speed);
 }
 
 //create method
@@ -21,7 +19,7 @@ var car = new Car();
 
 // car.drive(160); -> method is working
 
-var Truck = function(num_of_wheels, speed) {
+var Truck = function(speed) {
     Car.call(this, 6, speed);
  }
 
@@ -29,7 +27,7 @@ Truck.prototype = Object.create(Car.prototype);
 
 var truck = new Truck();
 
-var Bycicle = function(num_of_wheels, speed) {
+var Bycicle = function() {
     Car.call(this, 2, 20);
  }
 
