@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>HTML</title>
+    </head>
+    <body style="color:#000">
+        <div class="header">
+            hohophoihoihoi
+        </div>
+        <div class="content">
+        </div>
+        <div class="footer">
+        </div>
+
+        <button class="btn">Change bg</button>
+        <button class="btn-2">Add div</button>
+        <button class="btn-3">Add img</button>
+
+        <script>
+            // Task1
+            var parent = document.querySelector("body");
+            
+            document.querySelector(".btn").addEventListener("click", () => {
+                if (parent.style.color == "#000") {
+                  parent.style.color = "#f00";
+                } else {
+                    parent.style.color = "#000";
+                }
+                
+            });
+            /*
+            Добавить три кнопки, которые будут делать следующее:
+              а) первая - менять цвет body (с белого на желтый, и обратно)
+              б) вторая - добавлять в определенный div новый div с текстом "Hello world!"
+              в) третья - из масива с картинками брать случайную картинку и в div добавлять img с этой картинкой (массив картинок заранее предопределен) / Math.random            
+            */
+        </script>
+    </body>
+</html>
