@@ -1,38 +1,77 @@
-<html>
-    <head>
-        <title>HTML</title>
-    </head>
-    <body style="color:#000">
-        <div class="header">
-            hohophoihoihoi
-        </div>
-        <div class="content">
-        </div>
-        <div class="footer">
-        </div>
+<!DOCTYPE html>
+	<head>
+	<title>HTML</title>
+	</head>
 
-        <button class="btn">Change bg</button>
-        <button class="btn-2">Add div</button>
-        <button class="btn-3">Add img</button>
+	<body style="color: red">
+		
+		<div class="header">
 
-        <script>
-            // Task1
-            var parent = document.querySelector("body");
-            
-            document.querySelector(".btn").addEventListener("click", () => {
-                if (parent.style.color == "#000") {
-                  parent.style.color = "#f00";
-                } else {
-                    parent.style.color = "#000";
-                }
-                
-            });
-            /*
-            Добавить три кнопки, которые будут делать следующее:
-              а) первая - менять цвет body (с белого на желтый, и обратно)
-              б) вторая - добавлять в определенный div новый div с текстом "Hello world!"
-              в) третья - из масива с картинками брать случайную картинку и в div добавлять img с этой картинкой (массив картинок заранее предопределен) / Math.random            
-            */
-        </script>
-    </body>
+		</div>
+		<div class="content">
+			<button class="btn">Change bg</button>
+			<p>I change color!</p>
+
+			<button class="btn-2" style="margin-bottom: 20px">Add div</button>
+			<div class="description-box" style="border: 1px solid #000; width: 500px; height: 200px; margin-bottom: 20px; overflow: hidden;"></div>
+
+			<button class="btn-3" style="margin-bottom:20px">Add img</button>
+			<div class="img-box">
+				<img src="images/image1.jpg" style="width:400px; height: auto">
+			</div>
+
+		</div>
+		<div class="footer">
+		</div>
+		
+
+		<script>
+		// Task1			
+
+			document.querySelector(".btn").addEventListener("click", () => {
+
+				var parent = document.querySelector("body");
+
+				if (parent.style.color == "red") {
+					parent.style.color = "black";
+				} else {
+					parent.style.color = "red";
+				}
+
+			});
+
+		//Task2
+
+			document.querySelector(".btn-2").addEventListener("click", () => {
+
+				var parent = document.querySelector(".description-box");
+	          	var newDiv = document.createElement("div");
+
+	            newDiv.innerText = "Hello world!";
+	            newDiv.style.padding = "50px";
+
+	            parent.insertBefore(newDiv, parent.childNodes[0]);
+
+			});
+
+		//Task3
+
+
+			var mas=["images/image1.jpg","images/image2.jpg","images/image3.jpg","images/image4.jpg","images/image5.jpg","images/image6.jpg","images/image7.jpg","images/image8.jpg","images/image9.jpg","images/image10.jpg"]; 
+
+			document.querySelector(".btn-3").addEventListener("click", () => {
+
+			   var r=Math.floor(Math.random()*mas.length);
+			   document.querySelector(".img-box > img").src=mas[r];
+			});
+			
+
+			/*
+		Добавить три кнопки, которые будут делать следующее:
+		а) первая - менять цвет body (с белого на желтый, и обратно)
+		б) вторая - добавлять в определенный div новый div с текстом "Hello world!"
+		в) третья - из масива с картинками брать случайную картинку и в div добавлять img с этой картинкой (массив картинок заранее предопределен) / Math.random 
+		*/
+		</script>
+	</body>
 </html>
